@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <QuartzCore/QuartzCore.h>
+@class WTMyoBridge;
 @class TLMArmSyncEvent;
 @class TLMOrientationEvent;
 @class TLMAccelerometerEvent;
@@ -29,6 +29,9 @@
 @end
 
 @interface WTMyo : NSObject
-- (instancetype)initWithDelegate:(id<WTMyoDelegate>)aDelegate;
+
+@property (nonatomic, readonly, strong) NSMutableArray *gesturesHistory;
 @property (nonatomic, weak) id <WTMyoDelegate> delegate;
+
+- (instancetype)initWithDelegate:(id<WTMyoDelegate>)aDelegate;
 @end
