@@ -7,7 +7,6 @@
 //
 
 #import "WTMyo.h"
-#import <MyoKit/MyoKit.h>
 #import "WTMyoBridge.h"
 
 @interface WTMyo ()
@@ -29,13 +28,12 @@
     return self;
 }
 
-- (NSMutableArray *)gesturesHistory
+
+- (void)setLockingPolicy:(TLMLockingPolicy)policy
 {
-    if (!_gesturesHistory) {
-        _gesturesHistory = @[].mutableCopy;
-    }
-    return _gesturesHistory;
+    [[TLMHub sharedHub] setLockingPolicy:policy];
 }
+
 
 
 

@@ -5,11 +5,25 @@
 //  Created by Max Tymchiy on 3/23/15.
 //  Copyright (c) 2015 Max Tymchiy. All rights reserved.
 //
-
+#import <objc/runtime.h>
 #import "WTMyo+ObserversAndDelegates.h"
 #import "WTMyoBridge.h"
+#import "NSObject+Extensions.h"
+
+NSInteger const kLIMIT_NUMBER_OF_GESTURES = 10;
 
 @implementation WTMyo (ObserversAndDelegates)
+
+- (NSMutableArray *)gesturesHistory
+{
+    return  objc_getAssociatedObject(self, @selector(gesturesHistory));
+}
+
+- (void)setGesturesHistory:(NSMutableArray *)aGesturesHistory
+{
+    objc_setAssociatedObject(self, @selector(gesturesHistory), aGesturesHistory, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 
 - (void)addMyoObservers
 {
@@ -54,13 +68,13 @@
                                              selector:@selector(didReceiveAccelerometerEvent:)
                                                  name:TLMMyoDidReceiveAccelerometerEventNotification
                                                object:nil];
-    //Posted when a new gyroscope event is available from a TLMMyo. Notifications are posted at a rate of 50 Hz.
+//    Posted when a new gyroscope event is available from a TLMMyo. Notifications are posted at a rate of 50 Hz.
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didReceiveGyroscopeEvent:)
                                                  name:TLMMyoDidReceiveGyroscopeEventNotification
                                                object:nil];
     
-    // Posted when a new pose is available from a TLMMyo.
+//     Posted when a new pose is available from a TLMMyo.
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didReceivePoseChange:)
                                                  name:TLMMyoDidReceivePoseChangedNotification
@@ -72,58 +86,91 @@
 
 - (void)didConnectDevice:(NSNotification *)notification
 {
-    [self.delegate didConnectDevice:notification.userInfo];
+    if ([self.delegate respondsToSelector:@selector(didConnectDevice:)]) {
+        [self.delegate didConnectDevice:notification.userInfo];
+    }
 }
 
 - (void)didDisconnectDevice:(NSNotification *)notification
 {
-    [self.delegate didDisconnectDevice:notification.userInfo];
+    if ([self.delegate respondsToSelector:@selector(didDisconnectDevice:)]) {
+        [self.delegate didDisconnectDevice:notification.userInfo];
+    }
 }
 
 - (void)didUnlockDevice:(NSNotification *)notification
 {
-    [self.delegate didUnlockDevice:notification.userInfo];
+    if ([self.delegate respondsToSelector:@selector(didUnlockDevice:)]) {
+        [self.delegate didUnlockDevice:notification.userInfo];
+    }
 }
 
 - (void)didLockDevice:(NSNotification *)notification
 {
-    [self.delegate didLockDevice:notification.userInfo];
+    if ([self.delegate respondsToSelector:@selector(didLockDevice:)]) {
+        [self.delegate didLockDevice:notification.userInfo];
+    }
 }
 
 - (void)didSyncArm:(NSNotification *)notification
 {
     // Retrieve the arm event from the notification's userInfo with the kTLMKeyArmSyncEvent key.
-    TLMArmSyncEvent *armEvent = notification.userInfo[kTLMKeyArmSyncEvent];
-    [self.delegate didSyncArmWithEvent:armEvent];
+    if ([self.delegate respondsToSelector:@selector(didSyncArmWithEvent:)]) {
+        TLMArmSyncEvent *armEvent = notification.userInfo[kTLMKeyArmSyncEvent];
+        [self.delegate didSyncArmWithEvent:armEvent];
+    }
 }
 
 - (void)didUnsyncArm:(NSNotification *)notification
 {
-    [self.delegate didUnsyncArm:notification.userInfo];
+    if ([self.delegate respondsToSelector:@selector(didUnsyncArm:)]) {
+        [self.delegate didUnsyncArm:notification.userInfo];
+    }
 }
 
 - (void)didReceiveOrientationEvent:(NSNotification *)notification {
     // Retrieve the orientation from the NSNotification's userInfo with the kTLMKeyOrientationEvent key.
-    TLMOrientationEvent *orientationEvent = notification.userInfo[kTLMKeyOrientationEvent];
-    [self.delegate didReceiveOrientationEvent:orientationEvent];
+    if ([self.delegate respondsToSelector:@selector(didReceiveOrientationEvent:)]) {
+        TLMOrientationEvent *orientationEvent = notification.userInfo[kTLMKeyOrientationEvent];
+        [self.delegate didReceiveOrientationEvent:orientationEvent];
+    }
 }
 
 - (void)didReceiveAccelerometerEvent:(NSNotification *)notification {
     // Retrieve the accelerometer event from the NSNotification's userInfo with the kTLMKeyAccelerometerEvent.
-    TLMAccelerometerEvent *accelerometerEvent = notification.userInfo[kTLMKeyAccelerometerEvent];
-    [self.delegate didReceiveAccelerometerEvent:accelerometerEvent];
+    if ([self.delegate respondsToSelector:@selector(didReceiveAccelerometerEvent:)]) {
+        TLMAccelerometerEvent *accelerometerEvent = notification.userInfo[kTLMKeyAccelerometerEvent];
+        [self.delegate didReceiveAccelerometerEvent:accelerometerEvent];
+    }
 }
 
 - (void)didReceiveGyroscopeEvent:(NSNotification *)notification {
     // Retrieve the gyroscope event from the NSNotification's userInfo with the kTLMKeyGyroscopeEvent key.
-    TLMGyroscopeEvent *gyroscopeEvent = notification.userInfo[kTLMKeyGyroscopeEvent];
-    [self.delegate didReceiveGyroscopeEvent:gyroscopeEvent];
+    if ([self.delegate respondsToSelector:@selector(didReceiveGyroscopeEvent:)]) {
+        TLMGyroscopeEvent *gyroscopeEvent = notification.userInfo[kTLMKeyGyroscopeEvent];
+        [self.delegate didReceiveGyroscopeEvent:gyroscopeEvent];
+    }
 }
 
 - (void)didReceivePoseChange:(NSNotification *)notification {
     // Retrieve the pose from the NSNotification's userInfo with the kTLMKeyPose key.
-    TLMPose *pose = notification.userInfo[kTLMKeyPose];
-    [self.delegate didReceivePoseChange:pose];
+    if ([self.delegate respondsToSelector:@selector(didReceivePoseChange:)]) {
+        TLMPose *pose = notification.userInfo[kTLMKeyPose];
+        [self updateGesturesHistoryWithPose:pose];
+        [self.delegate didReceivePoseChange:pose];
+    }
+}
+
+#pragma mark - Pose methods
+- (void)updateGesturesHistoryWithPose:(TLMPose *)pose
+{
+    if (!self.gesturesHistory) {
+        self.gesturesHistory = @[].mutableCopy;
+    }
+    if (self.gesturesHistory.count > kLIMIT_NUMBER_OF_GESTURES) {
+        [self.gesturesHistory removeObjectAtIndex:0];
+    }
+    [self.gesturesHistory addObject:pose];
 }
 
 @end

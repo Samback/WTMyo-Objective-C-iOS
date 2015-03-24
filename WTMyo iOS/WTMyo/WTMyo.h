@@ -7,14 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MyoKit/MyoKit.h>
+
 @class WTMyoBridge;
-@class TLMArmSyncEvent;
-@class TLMOrientationEvent;
-@class TLMAccelerometerEvent;
-@class TLMPose;
-@class TLMGyroscopeEvent;
 
 @protocol WTMyoDelegate <NSObject>
+
 @optional
 - (void)didConnectDevice:(NSDictionary *)userInfo;
 - (void)didDisconnectDevice:(NSDictionary *)userInfo;
@@ -29,9 +27,10 @@
 @end
 
 @interface WTMyo : NSObject
-
-@property (nonatomic, readonly, strong) NSMutableArray *gesturesHistory;
 @property (nonatomic, weak) id <WTMyoDelegate> delegate;
-
 - (instancetype)initWithDelegate:(id<WTMyoDelegate>)aDelegate;
+
+- (void)setLockingPolicy:(TLMLockingPolicy)policy;
+
+@property (nonatomic, readonly, strong) NSMutableArray *gesturesHistory; //limited
 @end
