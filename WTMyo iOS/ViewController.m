@@ -58,7 +58,7 @@
 - (void)didReceivePoseChange:(TLMPose *)pose
 {
     NSLog(@"Pose %@", pose);
-    NSLog(@"History %@", [self.wtmyo.gesturesHistory valueForKey:@"type"]);
+    NSLog(@"History %@", [self.wtmyo.poseHistory valueForKey:@"type"]);
 }
 
 @end

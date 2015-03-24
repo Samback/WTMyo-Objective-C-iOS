@@ -14,12 +14,12 @@ NSInteger const kLIMIT_NUMBER_OF_GESTURES = 10;
 
 @implementation WTMyo (ObserversAndDelegates)
 
-- (NSMutableArray *)gesturesHistory
+- (NSMutableArray *)poseHistory
 {
     return  objc_getAssociatedObject(self, @selector(gesturesHistory));
 }
 
-- (void)setGesturesHistory:(NSMutableArray *)aGesturesHistory
+- (void)setPoseHistory:(NSMutableArray *)aGesturesHistory
 {
     objc_setAssociatedObject(self, @selector(gesturesHistory), aGesturesHistory, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
@@ -156,21 +156,25 @@ NSInteger const kLIMIT_NUMBER_OF_GESTURES = 10;
     // Retrieve the pose from the NSNotification's userInfo with the kTLMKeyPose key.
     if ([self.delegate respondsToSelector:@selector(didReceivePoseChange:)]) {
         TLMPose *pose = notification.userInfo[kTLMKeyPose];
-        [self updateGesturesHistoryWithPose:pose];
+        [self updatePoseHistoryWithPose:pose];
         [self.delegate didReceivePoseChange:pose];
     }
 }
 
 #pragma mark - Pose methods
-- (void)updateGesturesHistoryWithPose:(TLMPose *)pose
+- (void)updatePoseHistoryWithPose:(TLMPose *)pose
 {
-    if (!self.gesturesHistory) {
-        self.gesturesHistory = @[].mutableCopy;
+    //Filter from garbage
+    if (pose.type == TLMPoseTypeRest) {
+        return;
     }
-    if (self.gesturesHistory.count > kLIMIT_NUMBER_OF_GESTURES) {
-        [self.gesturesHistory removeObjectAtIndex:0];
+    if (!self.poseHistory) {
+        self.poseHistory = @[].mutableCopy;
     }
-    [self.gesturesHistory addObject:pose];
+    if (self.poseHistory.count > kLIMIT_NUMBER_OF_GESTURES) {
+        [self.poseHistory removeObjectAtIndex:0];
+    }
+    [self.poseHistory addObject:pose];
 }
 
 @end

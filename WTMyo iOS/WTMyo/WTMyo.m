@@ -10,7 +10,7 @@
 #import "WTMyoBridge.h"
 
 @interface WTMyo ()
-@property (nonatomic, readwrite, strong) NSMutableArray *gesturesHistory;
+@property (nonatomic, readwrite, strong) NSMutableArray *poseHistory;
 
 @end
 
@@ -27,7 +27,6 @@
     }
     return self;
 }
-
 
 - (void)setLockingPolicy:(TLMLockingPolicy)policy
 {

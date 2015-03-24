@@ -32,5 +32,5 @@
 
 - (void)setLockingPolicy:(TLMLockingPolicy)policy;
 
-@property (nonatomic, readonly, strong) NSMutableArray *gesturesHistory; //limited
+@property (nonatomic, readonly, strong) NSMutableArray *poseHistory; //limited
 @end
