@@ -20,8 +20,6 @@
 		3471C5D51AC0AA37002393B2 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3471C5D31AC0AA37002393B2 /* MyoKit.framework */; };
 		34A1C66A1AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6691AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.m */; };
 		34A1C66B1AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6691AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.m */; };
-		34A1C66F1AC0BD1300C6BF55 /* NSObject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C66E1AC0BD1300C6BF55 /* NSObject+Extensions.m */; };
-		34A1C6701AC0BD1300C6BF55 /* NSObject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C66E1AC0BD1300C6BF55 /* NSObject+Extensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +52,6 @@
 		34A1C6671AC0AD4700C6BF55 /* WTMyoBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTMyoBridge.h; path = WTMyo/WTMyoBridge.h; sourceTree = "<group>"; };
 		34A1C6681AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WTMyo+ObserversAndDelegates.h"; path = "WTMyo/Categories/WTMyo+ObserversAndDelegates.h"; sourceTree = "<group>"; };
 		34A1C6691AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "WTMyo+ObserversAndDelegates.m"; path = "WTMyo/Categories/WTMyo+ObserversAndDelegates.m"; sourceTree = "<group>"; };
-		34A1C66D1AC0BD1300C6BF55 /* NSObject+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Extensions.h"; path = "WTMyo/Categories/NSObject+Extensions.h"; sourceTree = "<group>"; };
-		34A1C66E1AC0BD1300C6BF55 /* NSObject+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Extensions.m"; path = "WTMyo/Categories/NSObject+Extensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,8 +151,6 @@
 			children = (
 				34A1C6681AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.h */,
 				34A1C6691AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.m */,
-				34A1C66D1AC0BD1300C6BF55 /* NSObject+Extensions.h */,
-				34A1C66E1AC0BD1300C6BF55 /* NSObject+Extensions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -264,7 +258,6 @@
 				34408AC31AC0902D00C2D8C6 /* ViewController.m in Sources */,
 				34408AC01AC0902D00C2D8C6 /* AppDelegate.m in Sources */,
 				34408AE61AC0913C00C2D8C6 /* WTMyo.m in Sources */,
-				34A1C66F1AC0BD1300C6BF55 /* NSObject+Extensions.m in Sources */,
 				34408ABD1AC0902D00C2D8C6 /* main.m in Sources */,
 				34A1C66A1AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.m in Sources */,
 			);
@@ -277,7 +270,6 @@
 				34408AE71AC0913C00C2D8C6 /* WTMyo.m in Sources */,
 				34408AD71AC0902D00C2D8C6 /* WTMyo_iOSTests.m in Sources */,
 				34A1C66B1AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.m in Sources */,
-				34A1C6701AC0BD1300C6BF55 /* NSObject+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
