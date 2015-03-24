@@ -35,6 +35,9 @@
         [self presentViewController:controller animated:YES completion:^{
             self.wtmyo = [[WTMyo alloc] initWithDelegate:self];
             [self.wtmyo setLockingPolicy:TLMLockingPolicyNone];
+            NSArray *pattern =  @[@(TLMPoseTypeDoubleTap), @(TLMPoseTypeFingersSpread)];
+            WTPosePattern *wtPattern = [WTPosePattern posePatternFromPoseList:pattern];
+            [self.wtmyo addPosePattern:wtPattern];
         }];
     });
    }

@@ -10,11 +10,7 @@
 #import "WTMyoBridge.h"
 
 @interface WTMyo ()
-@property (nonatomic, readwrite, strong) NSMutableArray *poseHistory;
-
 @end
-
-
 
 @implementation WTMyo
 
@@ -32,15 +28,5 @@
 {
     [[TLMHub sharedHub] setLockingPolicy:policy];
 }
-
-
-
-
-
-
-
-
-
-
 
 @end

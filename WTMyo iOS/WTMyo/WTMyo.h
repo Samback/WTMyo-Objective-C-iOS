@@ -10,6 +10,7 @@
 #import <MyoKit/MyoKit.h>
 
 @class WTMyoBridge;
+@class WTPosePattern;
 
 @protocol WTMyoDelegate <NSObject>
 
@@ -31,6 +32,7 @@
 - (instancetype)initWithDelegate:(id<WTMyoDelegate>)aDelegate;
 
 - (void)setLockingPolicy:(TLMLockingPolicy)policy;
+
 
 @property (nonatomic, readonly, strong) NSMutableArray *poseHistory; //limited
 @end

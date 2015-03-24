@@ -11,7 +11,5 @@
 #import "WTMyoBridge.h"
 
 @interface WTMyo (ObserversAndDelegates)
-
 - (void)addMyoObservers;
-
 @end

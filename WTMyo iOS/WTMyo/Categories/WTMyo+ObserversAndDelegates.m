@@ -8,7 +8,6 @@
 #import <objc/runtime.h>
 #import "WTMyo+ObserversAndDelegates.h"
 #import "WTMyoBridge.h"
-#import "NSObject+Extensions.h"
 
 NSInteger const kLIMIT_NUMBER_OF_GESTURES = 10;
 
@@ -16,12 +15,12 @@ NSInteger const kLIMIT_NUMBER_OF_GESTURES = 10;
 
 - (NSMutableArray *)poseHistory
 {
-    return  objc_getAssociatedObject(self, @selector(gesturesHistory));
+    return  objc_getAssociatedObject(self, @selector(poseHistory));
 }
 
-- (void)setPoseHistory:(NSMutableArray *)aGesturesHistory
+- (void)setPoseHistory:(NSMutableArray *)aPoseHistory
 {
-    objc_setAssociatedObject(self, @selector(gesturesHistory), aGesturesHistory, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(poseHistory), aPoseHistory, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 
