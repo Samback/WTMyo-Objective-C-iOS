@@ -54,4 +54,10 @@
     return YES;
 }
 
+
+- (void)patternWasFired:(WTPosePattern *)parrent
+{
+    
+}
+
 @end

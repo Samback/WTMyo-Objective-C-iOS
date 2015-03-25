@@ -25,6 +25,8 @@
 - (void)didReceiveAccelerometerEvent:(TLMAccelerometerEvent *)accelerometerEvent;
 - (void)didReceiveGyroscopeEvent:(TLMGyroscopeEvent *)gyroscopeEvent;
 - (void)didReceivePoseChange:(TLMPose *)pose;
+
+- (void)patternWasFired:(WTPosePattern *)parrent;
 @end
 
 @interface WTMyo : NSObject

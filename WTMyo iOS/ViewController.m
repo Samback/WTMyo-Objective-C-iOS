@@ -38,6 +38,7 @@
             NSArray *pattern =  @[@(TLMPoseTypeDoubleTap), @(TLMPoseTypeFingersSpread)];
             WTPosePattern *wtPattern = [WTPosePattern posePatternFromPoseList:pattern];
             [self.wtmyo addPosePattern:wtPattern];
+            [self.wtmyo addPosePattern:wtPattern];
         }];
     });
    }
