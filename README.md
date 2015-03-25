@@ -44,8 +44,8 @@ WTPosePattern *wtPattern1 = [WTPosePattern posePatternFromPoseList:pattern1 with
 ```
 
 #####More information
-Myo - (https://www.thalmic.com/en/myo/)
-More bindings - (https://developer.thalmic.com/forums/topic/541/?page=1)
+Myo - https://www.thalmic.com/en/myo/
+More bindings - https://developer.thalmic.com/forums/topic/541/?page=1
 
 
 
