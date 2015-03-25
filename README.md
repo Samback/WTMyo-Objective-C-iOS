@@ -3,7 +3,7 @@ Wrapper under MYO SDK for iOS.
 *You need to add the Myo.framework to the project -* [Download page](https://developer.thalmic.com/downloads)
 
 ##Info
-This small wrapper help you to controll gestures that you get from Myo Device.
+This is a small wrapper that help you to controll gestures from Myo Device.
 Observer functionality was change to delegates.
 
 ####WTMyoDelegate
@@ -26,6 +26,7 @@ Observer functionality was change to delegates.
 ```
 
 #####Steps to work
+It's additional steps to basic steps that you can find at https://developer.thalmic.com/docs/api_reference/ios/_getting__started.html
 ```
 self.wtmyo = [[WTMyo alloc] initWithDelegate:self];
 ```
