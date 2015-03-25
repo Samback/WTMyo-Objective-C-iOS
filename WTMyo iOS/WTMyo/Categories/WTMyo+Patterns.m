@@ -12,24 +12,24 @@
 #import <objc/runtime.h>
 
 @implementation WTMyo (Patterns)
-- (NSMutableArray *)posePattern
+- (NSMutableArray *)posePatterns
 {
-    return  objc_getAssociatedObject(self, @selector(posePattern));
+    return  objc_getAssociatedObject(self, @selector(posePatterns));
 }
 
-- (void)setPosePattern:(NSMutableArray *)aPosePattern
+- (void)setPosePatterns:(NSMutableArray *)aPosePatterns
 {
-    objc_setAssociatedObject(self, @selector(posePattern), aPosePattern, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(posePatterns), aPosePatterns, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (BOOL)addPosePattern:(WTPosePattern *)pattern
 {
-    if (!self.posePattern.count) {
-        self.posePattern = @[].mutableCopy;
+    if (!self.posePatterns.count) {
+        self.posePatterns = @[].mutableCopy;
     }
     BOOL canBeAdded = [self canBeAdd:pattern];
     if (canBeAdded) {
-        [self.posePattern addObject:pattern];
+        [self.posePatterns addObject:pattern];
     }
     return canBeAdded;
 }
@@ -39,7 +39,7 @@
     NSUInteger inputPatternLength = pattern.patternString.length;
     NSUInteger currentPoseLength = 0;
     BOOL substringFlag = NO;
-    for (WTPosePattern *posePattern in self.posePattern) {
+    for (WTPosePattern *posePattern in self.posePatterns) {
         currentPoseLength = posePattern.patternString.length;
         if (currentPoseLength > inputPatternLength) {
             substringFlag = [posePattern.patternString containsString:pattern.patternString];
@@ -52,12 +52,6 @@
         }
     }
     return YES;
-}
-
-
-- (void)patternWasFired:(WTPosePattern *)parrent
-{
-    
 }
 
 @end

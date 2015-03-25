@@ -9,5 +9,8 @@
 #import "WTMyo.h"
 
 @interface WTMyo (Patterns)
+
+@property (nonatomic, readonly, strong) NSMutableArray *posePatterns;
 - (BOOL)addPosePattern:(WTPosePattern *)pattern;
+
 @end

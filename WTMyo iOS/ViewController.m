@@ -36,7 +36,7 @@
             self.wtmyo = [[WTMyo alloc] initWithDelegate:self];
             [self.wtmyo setLockingPolicy:TLMLockingPolicyNone];
             NSArray *pattern =  @[@(TLMPoseTypeDoubleTap), @(TLMPoseTypeFingersSpread)];
-            WTPosePattern *wtPattern = [WTPosePattern posePatternFromPoseList:pattern];
+            WTPosePattern *wtPattern = [WTPosePattern posePatternFromPoseList:pattern withName:@"Cool gesture"];
             [self.wtmyo addPosePattern:wtPattern];
             [self.wtmyo addPosePattern:wtPattern];
         }];
@@ -61,8 +61,11 @@
 
 - (void)didReceivePoseChange:(TLMPose *)pose
 {
-    NSLog(@"Pose %@", pose);
-    NSLog(@"History %@", [self.wtmyo.poseHistory valueForKey:@"type"]);
 }
 
+
+- (void)patternWasDetected:(WTPosePattern *)pattern
+{
+    NSLog(@"Pattern name %@, pattern items %@", pattern.name, [pattern detectedPoses]);
+}
 @end

@@ -26,6 +26,8 @@
 		34A1C6781AC1CDDB00C6BF55 /* NSArray+WTMPose.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6761AC1CDDB00C6BF55 /* NSArray+WTMPose.m */; };
 		34A1C6831AC1D1FC00C6BF55 /* WTMyo+Patterns.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6821AC1D1FC00C6BF55 /* WTMyo+Patterns.m */; };
 		34A1C6841AC1D1FC00C6BF55 /* WTMyo+Patterns.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6821AC1D1FC00C6BF55 /* WTMyo+Patterns.m */; };
+		34A1C6871AC2A02B00C6BF55 /* WTMyoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6861AC2A02B00C6BF55 /* WTMyoHelper.m */; };
+		34A1C6881AC2A02B00C6BF55 /* WTMyoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6861AC2A02B00C6BF55 /* WTMyoHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		34A1C6761AC1CDDB00C6BF55 /* NSArray+WTMPose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+WTMPose.m"; path = "WTMyo/Categories/NSArray+WTMPose.m"; sourceTree = "<group>"; };
 		34A1C6811AC1D1FC00C6BF55 /* WTMyo+Patterns.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WTMyo+Patterns.h"; path = "WTMyo/Categories/WTMyo+Patterns.h"; sourceTree = "<group>"; };
 		34A1C6821AC1D1FC00C6BF55 /* WTMyo+Patterns.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "WTMyo+Patterns.m"; path = "WTMyo/Categories/WTMyo+Patterns.m"; sourceTree = "<group>"; };
+		34A1C6851AC2A02B00C6BF55 /* WTMyoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTMyoHelper.h; path = WTMyo/WTMyoHelper.h; sourceTree = "<group>"; };
+		34A1C6861AC2A02B00C6BF55 /* WTMyoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTMyoHelper.m; path = WTMyo/WTMyoHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,7 @@
 		34408AE31AC090FC00C2D8C6 /* WTMyo */ = {
 			isa = PBXGroup;
 			children = (
+				34A1C6891AC2A0DD00C6BF55 /* Helpers */,
 				34A1C66C1AC0AD9F00C6BF55 /* Categories */,
 				34408AE41AC0913C00C2D8C6 /* WTMyo.h */,
 				34408AE51AC0913C00C2D8C6 /* WTMyo.m */,
@@ -171,6 +176,15 @@
 				34A1C6821AC1D1FC00C6BF55 /* WTMyo+Patterns.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		34A1C6891AC2A0DD00C6BF55 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				34A1C6851AC2A02B00C6BF55 /* WTMyoHelper.h */,
+				34A1C6861AC2A02B00C6BF55 /* WTMyoHelper.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +290,7 @@
 				34408AC31AC0902D00C2D8C6 /* ViewController.m in Sources */,
 				34408AC01AC0902D00C2D8C6 /* AppDelegate.m in Sources */,
 				34A1C6831AC1D1FC00C6BF55 /* WTMyo+Patterns.m in Sources */,
+				34A1C6871AC2A02B00C6BF55 /* WTMyoHelper.m in Sources */,
 				34408AE61AC0913C00C2D8C6 /* WTMyo.m in Sources */,
 				34A1C6771AC1CDDB00C6BF55 /* NSArray+WTMPose.m in Sources */,
 				34408ABD1AC0902D00C2D8C6 /* main.m in Sources */,
@@ -293,6 +308,7 @@
 				34A1C6781AC1CDDB00C6BF55 /* NSArray+WTMPose.m in Sources */,
 				34408AD71AC0902D00C2D8C6 /* WTMyo_iOSTests.m in Sources */,
 				34A1C6741AC1CCEF00C6BF55 /* WTPosePattern.m in Sources */,
+				34A1C6881AC2A02B00C6BF55 /* WTMyoHelper.m in Sources */,
 				34A1C66B1AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

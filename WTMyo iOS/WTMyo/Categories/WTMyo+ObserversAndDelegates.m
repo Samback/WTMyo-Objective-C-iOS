@@ -13,6 +13,18 @@ NSInteger const kLIMIT_NUMBER_OF_GESTURES = 10;
 
 @implementation WTMyo (ObserversAndDelegates)
 
+
+- (NSString *)stringOfHistory
+{
+    return  objc_getAssociatedObject(self, @selector(stringOfHistory));
+}
+
+- (void)setStringOfHistory:(NSString *)aStringOfHistory
+{
+    objc_setAssociatedObject(self, @selector(stringOfHistory), aStringOfHistory, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+
 - (NSMutableArray *)poseHistory
 {
     return  objc_getAssociatedObject(self, @selector(poseHistory));
@@ -170,10 +182,47 @@ NSInteger const kLIMIT_NUMBER_OF_GESTURES = 10;
     if (!self.poseHistory) {
         self.poseHistory = @[].mutableCopy;
     }
+    if (!self.stringOfHistory.length) {
+         self.stringOfHistory = @"";
+    }
+    
+    [self addToPoseHistoryNewPose:pose];
+}
+
+- (void)addToPoseHistoryNewPose:(TLMPose *)pose
+{
     if (self.poseHistory.count > kLIMIT_NUMBER_OF_GESTURES) {
         [self.poseHistory removeObjectAtIndex:0];
+        if (self.stringOfHistory.length > kLIMIT_NUMBER_OF_GESTURES) {
+           self.stringOfHistory = [self.stringOfHistory substringFromIndex:1];
+        }
+        
     }
     [self.poseHistory addObject:pose];
+    self.stringOfHistory = [self.stringOfHistory stringByAppendingString:[WTMyoHelper strinfFromPoseType:pose.type]];
+    WTPosePattern *pattern = [self findPattern];
+    if (pattern) {
+        [self.delegate patternWasDetected:pattern];
+    }
+}
+
+- (WTPosePattern *)findPattern
+{
+    if (!self.posePatterns.count) {
+        return nil;
+    }
+    NSLog(@"Current state %@", self.stringOfHistory);
+    for (WTPosePattern *pattern in self.posePatterns) {
+          NSLog(@"Pattern %@", pattern.patternString);
+        if ([self.stringOfHistory containsString:pattern.patternString]) {
+            NSRange range = [self.stringOfHistory rangeOfString:pattern.patternString];
+            NSArray *poses = [self.poseHistory subarrayWithRange:range];
+            [self.poseHistory removeAllObjects];
+            self.stringOfHistory = @"";
+            return [WTPosePattern posePatternFromPoseList:poses withName:pattern.name];
+        }
+    }
+    return nil;
 }
 
 @end

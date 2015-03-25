@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface WTPosePattern : NSObject
-+ (instancetype)posePatternFromPoseList:(NSArray *)poses;
++ (instancetype)posePatternFromPoseList:(NSArray *)poses withName:(NSString *)name;
 @property (nonatomic, readonly, strong) NSString *patternString;
+@property (nonatomic, readonly, strong) NSString *name;
+- (NSArray *)detectedPoses;
 @end

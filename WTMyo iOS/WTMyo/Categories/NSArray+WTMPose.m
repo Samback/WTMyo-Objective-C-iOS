@@ -7,7 +7,7 @@
 //
 
 #import "NSArray+WTMPose.h"
-#import  <MyoKit/MyoKit.h>
+#import "WTMyoBridge.h"
 
 @implementation NSArray (WTMPose)
 - (NSString *)stringFromPoses
@@ -16,9 +16,9 @@
     if (!self.count) {
         return posePattern;
     }
-    char c = 'a';
+  
     for (NSNumber *pose in self) {
-       posePattern = [posePattern stringByAppendingString:[NSString stringWithFormat:@"%c", (c + pose.intValue)]];
+       posePattern = [posePattern stringByAppendingString:[WTMyoHelper strinfFromPoseType:pose.intValue]];
     }    
     return posePattern;
 }
