@@ -12,5 +12,6 @@
 
 @property (nonatomic, readonly, strong) NSMutableArray *posePatterns;
 - (BOOL)addPosePattern:(WTPosePattern *)pattern;
+- (void)removePosePatternByName:(NSString *)poseName;
 
 @end

@@ -34,6 +34,20 @@
     return canBeAdded;
 }
 
+- (void)removePosePatternByName:(NSString *)poseName
+{
+    __block NSInteger posePosition = -1;
+    [self.posePatterns enumerateObjectsUsingBlock:^(WTPosePattern *pattern, NSUInteger idx, BOOL *stop) {
+        if ([pattern.name isEqualToString:poseName]) {
+            posePosition = idx;
+            *stop = YES;
+        }
+    }];
+    if (posePosition != -1) {
+        [self.posePatterns removeObjectAtIndex:posePosition];
+    }
+}
+
 - (BOOL)canBeAdd:(WTPosePattern *)pattern
 {
     NSUInteger inputPatternLength = pattern.patternString.length;

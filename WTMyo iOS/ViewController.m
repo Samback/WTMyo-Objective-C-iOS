@@ -36,9 +36,14 @@
             self.wtmyo = [[WTMyo alloc] initWithDelegate:self];
             [self.wtmyo setLockingPolicy:TLMLockingPolicyNone];
             NSArray *pattern =  @[@(TLMPoseTypeDoubleTap), @(TLMPoseTypeFingersSpread)];
+            NSArray *pattern1 =  @[@(TLMPoseTypeFingersSpread), @(TLMPoseTypeDoubleTap) ];
             WTPosePattern *wtPattern = [WTPosePattern posePatternFromPoseList:pattern withName:@"Cool gesture"];
+            WTPosePattern *wtPattern1 = [WTPosePattern posePatternFromPoseList:pattern1 withName:@"Cool gesture1"];
             [self.wtmyo addPosePattern:wtPattern];
             [self.wtmyo addPosePattern:wtPattern];
+            [self.wtmyo addPosePattern:wtPattern1];
+            [self.wtmyo removePosePatternByName:@"Cool gesture1"];
+            
         }];
     });
    }

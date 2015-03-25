@@ -211,9 +211,7 @@ NSInteger const kLIMIT_NUMBER_OF_GESTURES = 10;
     if (!self.posePatterns.count) {
         return nil;
     }
-    NSLog(@"Current state %@", self.stringOfHistory);
     for (WTPosePattern *pattern in self.posePatterns) {
-          NSLog(@"Pattern %@", pattern.patternString);
         if ([self.stringOfHistory containsString:pattern.patternString]) {
             NSRange range = [self.stringOfHistory rangeOfString:pattern.patternString];
             NSArray *poses = [self.poseHistory subarrayWithRange:range];
