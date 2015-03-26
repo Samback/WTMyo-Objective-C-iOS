@@ -35,6 +35,44 @@ NSInteger const kLIMIT_NUMBER_OF_GESTURES = 10;
     objc_setAssociatedObject(self, @selector(poseHistory), aPoseHistory, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+
+- (NSMutableArray *)drawPoints
+{
+    return  objc_getAssociatedObject(self, @selector(drawPoints));
+}
+
+- (void)setDrawPoints:(NSMutableArray *)aDrawPoints
+{
+    objc_setAssociatedObject(self, @selector(drawPoints), aDrawPoints, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSNumber *)drawRecord
+{
+    return  objc_getAssociatedObject(self, @selector(drawRecord));
+}
+
+- (void)setDrawRecord:(NSNumber *)aDrawRecord
+{
+    objc_setAssociatedObject(self, @selector(drawRecord), aDrawRecord, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)startRecordDraw
+{
+    self.drawPoints = @[].mutableCopy;
+    self.drawRecord = @(YES);
+}
+
+- (void)finishRecordDraw
+{
+    self.drawRecord = @(NO);
+}
+
+- (BOOL)isDrawingNow
+{
+    return self.drawRecord.boolValue;
+}
+
+
 - (void)addMyoObservers
 {
     // Data notifications are received through NSNotificationCenter.
@@ -150,6 +188,9 @@ NSInteger const kLIMIT_NUMBER_OF_GESTURES = 10;
     // Retrieve the accelerometer event from the NSNotification's userInfo with the kTLMKeyAccelerometerEvent.
     if ([self.delegate respondsToSelector:@selector(didReceiveAccelerometerEvent:)]) {
         TLMAccelerometerEvent *accelerometerEvent = notification.userInfo[kTLMKeyAccelerometerEvent];
+        if ([self isDrawingNow]) {
+            [self.drawPoints addObject:[NSValue valueWithCGPoint:CGPointMake(accelerometerEvent.vector.x *100, accelerometerEvent.vector.y *100)]];
+        }
         [self.delegate didReceiveAccelerometerEvent:accelerometerEvent];
     }
 }

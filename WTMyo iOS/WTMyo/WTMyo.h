@@ -5,9 +5,9 @@
 //  Created by Max Tymchiy on 3/23/15.
 //  Copyright (c) 2015 Max Tymchiy. All rights reserved.
 //
+#import <MyoKit/MyoKit.h>
 
 #import <Foundation/Foundation.h>
-#import <MyoKit/MyoKit.h>
 
 @class WTMyoBridge;
 @class WTPosePattern;
@@ -31,9 +31,11 @@
 
 @interface WTMyo : NSObject
 @property (nonatomic, weak) id <WTMyoDelegate> delegate;
+@property (nonatomic, readonly, strong) NSMutableArray *drawHistory;
 - (instancetype)initWithDelegate:(id<WTMyoDelegate>)aDelegate;
 
 - (void)setLockingPolicy:(TLMLockingPolicy)policy;
+
 
 
 @property (nonatomic, readonly, strong) NSMutableArray *poseHistory; //limited 10 items

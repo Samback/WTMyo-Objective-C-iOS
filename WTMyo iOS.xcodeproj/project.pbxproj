@@ -16,6 +16,7 @@
 		34408AD71AC0902D00C2D8C6 /* WTMyo_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34408AD61AC0902D00C2D8C6 /* WTMyo_iOSTests.m */; };
 		34408AE61AC0913C00C2D8C6 /* WTMyo.m in Sources */ = {isa = PBXBuildFile; fileRef = 34408AE51AC0913C00C2D8C6 /* WTMyo.m */; };
 		34408AE71AC0913C00C2D8C6 /* WTMyo.m in Sources */ = {isa = PBXBuildFile; fileRef = 34408AE51AC0913C00C2D8C6 /* WTMyo.m */; };
+		346DBA4F1AC4B0AC005FBE33 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 346DBA4E1AC4B0AC005FBE33 /* MyoKit.framework */; };
 		34A1C66A1AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6691AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.m */; };
 		34A1C66B1AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6691AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.m */; };
 		34A1C6731AC1CCEF00C6BF55 /* WTPosePattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6721AC1CCEF00C6BF55 /* WTPosePattern.m */; };
@@ -26,8 +27,8 @@
 		34A1C6841AC1D1FC00C6BF55 /* WTMyo+Patterns.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6821AC1D1FC00C6BF55 /* WTMyo+Patterns.m */; };
 		34A1C6871AC2A02B00C6BF55 /* WTMyoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6861AC2A02B00C6BF55 /* WTMyoHelper.m */; };
 		34A1C6881AC2A02B00C6BF55 /* WTMyoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6861AC2A02B00C6BF55 /* WTMyoHelper.m */; };
-		34EEC8FF1AC4998100031277 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34EEC8FE1AC4998100031277 /* MyoKit.framework */; };
-		34EEC9001AC4998100031277 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34EEC8FE1AC4998100031277 /* MyoKit.framework */; };
+		34EEC9031AC4A97900031277 /* WTMyo+Drawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EEC9021AC4A97900031277 /* WTMyo+Drawer.m */; };
+		34EEC9041AC4A97900031277 /* WTMyo+Drawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EEC9021AC4A97900031277 /* WTMyo+Drawer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		34408AD61AC0902D00C2D8C6 /* WTMyo_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTMyo_iOSTests.m; sourceTree = "<group>"; };
 		34408AE41AC0913C00C2D8C6 /* WTMyo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTMyo.h; path = WTMyo/WTMyo.h; sourceTree = "<group>"; };
 		34408AE51AC0913C00C2D8C6 /* WTMyo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTMyo.m; path = WTMyo/WTMyo.m; sourceTree = "<group>"; };
+		346DBA4E1AC4B0AC005FBE33 /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyoKit.framework; sourceTree = "<group>"; };
 		34A1C6671AC0AD4700C6BF55 /* WTMyoBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTMyoBridge.h; path = WTMyo/WTMyoBridge.h; sourceTree = "<group>"; };
 		34A1C6681AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WTMyo+ObserversAndDelegates.h"; path = "WTMyo/Categories/WTMyo+ObserversAndDelegates.h"; sourceTree = "<group>"; };
 		34A1C6691AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "WTMyo+ObserversAndDelegates.m"; path = "WTMyo/Categories/WTMyo+ObserversAndDelegates.m"; sourceTree = "<group>"; };
@@ -67,7 +69,8 @@
 		34A1C6821AC1D1FC00C6BF55 /* WTMyo+Patterns.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "WTMyo+Patterns.m"; path = "WTMyo/Categories/WTMyo+Patterns.m"; sourceTree = "<group>"; };
 		34A1C6851AC2A02B00C6BF55 /* WTMyoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTMyoHelper.h; path = WTMyo/WTMyoHelper.h; sourceTree = "<group>"; };
 		34A1C6861AC2A02B00C6BF55 /* WTMyoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTMyoHelper.m; path = WTMyo/WTMyoHelper.m; sourceTree = "<group>"; };
-		34EEC8FE1AC4998100031277 /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyoKit.framework; sourceTree = "<group>"; };
+		34EEC9011AC4A97900031277 /* WTMyo+Drawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WTMyo+Drawer.h"; path = "WTMyo/Categories/WTMyo+Drawer.h"; sourceTree = "<group>"; };
+		34EEC9021AC4A97900031277 /* WTMyo+Drawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "WTMyo+Drawer.m"; path = "WTMyo/Categories/WTMyo+Drawer.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34EEC8FF1AC4998100031277 /* MyoKit.framework in Frameworks */,
+				346DBA4F1AC4B0AC005FBE33 /* MyoKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +86,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34EEC9001AC4998100031277 /* MyoKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +121,7 @@
 				34408AC41AC0902D00C2D8C6 /* Main.storyboard */,
 				34408AC71AC0902D00C2D8C6 /* Images.xcassets */,
 				34408AC91AC0902D00C2D8C6 /* LaunchScreen.xib */,
+				346DBA4E1AC4B0AC005FBE33 /* MyoKit.framework */,
 				34408ABA1AC0902D00C2D8C6 /* Supporting Files */,
 			);
 			path = "WTMyo iOS";
@@ -127,7 +130,6 @@
 		34408ABA1AC0902D00C2D8C6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				34EEC8FE1AC4998100031277 /* MyoKit.framework */,
 				34408ABB1AC0902D00C2D8C6 /* Info.plist */,
 				34408ABC1AC0902D00C2D8C6 /* main.m */,
 			);
@@ -174,6 +176,8 @@
 				34A1C6761AC1CDDB00C6BF55 /* NSArray+WTMPose.m */,
 				34A1C6811AC1D1FC00C6BF55 /* WTMyo+Patterns.h */,
 				34A1C6821AC1D1FC00C6BF55 /* WTMyo+Patterns.m */,
+				34EEC9011AC4A97900031277 /* WTMyo+Drawer.h */,
+				34EEC9021AC4A97900031277 /* WTMyo+Drawer.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -290,6 +294,7 @@
 				34408AC31AC0902D00C2D8C6 /* ViewController.m in Sources */,
 				34408AC01AC0902D00C2D8C6 /* AppDelegate.m in Sources */,
 				34A1C6831AC1D1FC00C6BF55 /* WTMyo+Patterns.m in Sources */,
+				34EEC9031AC4A97900031277 /* WTMyo+Drawer.m in Sources */,
 				34A1C6871AC2A02B00C6BF55 /* WTMyoHelper.m in Sources */,
 				34408AE61AC0913C00C2D8C6 /* WTMyo.m in Sources */,
 				34A1C6771AC1CDDB00C6BF55 /* NSArray+WTMPose.m in Sources */,
@@ -304,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34A1C6841AC1D1FC00C6BF55 /* WTMyo+Patterns.m in Sources */,
+				34EEC9041AC4A97900031277 /* WTMyo+Drawer.m in Sources */,
 				34408AE71AC0913C00C2D8C6 /* WTMyo.m in Sources */,
 				34A1C6781AC1CDDB00C6BF55 /* NSArray+WTMPose.m in Sources */,
 				34408AD71AC0902D00C2D8C6 /* WTMyo_iOSTests.m in Sources */,
@@ -432,6 +438,8 @@
 					iOS,
 					"$(PROJECT_DIR)/WTMyo",
 					iOS,
+					"$(PROJECT_DIR)/WTMyo",
+					iOS,
 				);
 				INFOPLIST_FILE = "WTMyo iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -447,6 +455,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/Sebek/Downloads/Myo-iOS-SDK-0.4-3.0",
+					"$(PROJECT_DIR)/WTMyo",
+					iOS,
 					"$(PROJECT_DIR)/WTMyo",
 					iOS,
 					"$(PROJECT_DIR)/WTMyo",

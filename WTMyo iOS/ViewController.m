@@ -36,7 +36,7 @@
             [self configurateMyo];
         }];
     });
-
+    
 }
 
 - (void)configurateMyo
@@ -56,7 +56,7 @@
 
 - (void)didReceiveOrientationEvent:(TLMOrientationEvent *)orientationEvent
 {
-
+    
 }
 
 - (void)didReceiveAccelerometerEvent:(TLMAccelerometerEvent *)accelerometerEvent
@@ -71,12 +71,39 @@
 
 - (void)didReceivePoseChange:(TLMPose *)pose
 {
+    if (pose.type == TLMPoseTypeFist) {
+        [self.wtmyo startRecordDraw];
+    }
+    if (pose.type == TLMPoseTypeFingersSpread) {
+        [self drawPath:self.wtmyo.bezierPath];
+    }
 }
+
 
 
 - (void)patternWasDetected:(WTPosePattern *)pattern
 {
     [self.wtmyo stopTrackPosePatterns];
     NSLog(@"Pattern name %@, pattern items %@", pattern.name, [pattern detectedPoses]);
+}
+
+
+- (void)drawPath:(UIBezierPath *)path
+{
+    [path strokeWithBlendMode:kCGBlendModeNormal alpha:1.0];
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    CGPathRef cgPath = path.CGPath;
+//    
+//    // Determine the drawing mode to use. Default to
+//    // detecting hits on the stroked portion of the path.
+//    
+//    // Save the graphics state so that the path can be
+//    // removed later.
+//    CGContextSaveGState(context);
+//    CGContextAddPath(context, cgPath);
+//    
+//    // Do the hit detection.
+//    
+//    CGContextRestoreGState(context);
 }
 @end
