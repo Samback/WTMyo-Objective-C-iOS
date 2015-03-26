@@ -43,7 +43,7 @@ WTPosePattern *wtPattern1 = [WTPosePattern posePatternFromPoseList:pattern1 with
 ```
 [self.wtmyo removePosePatternByName:@"Cool gesture1"];
 ```
-#####Start stop and check is pose patterns on
+#####Start, stop and check is pose patterns on
 ```
 [self.wtmyo startTrackPosePatterns];
 [self.wtmyo stopTrackPosePatterns];
