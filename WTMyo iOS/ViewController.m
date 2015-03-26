@@ -33,20 +33,25 @@
         UINavigationController *controller = [TLMSettingsViewController settingsInNavigationController];
         // Present the settings view controller modally.
         [self presentViewController:controller animated:YES completion:^{
-            self.wtmyo = [[WTMyo alloc] initWithDelegate:self];
-            [self.wtmyo setLockingPolicy:TLMLockingPolicyNone];
-            NSArray *pattern =  @[@(TLMPoseTypeDoubleTap), @(TLMPoseTypeFingersSpread)];
-            NSArray *pattern1 =  @[@(TLMPoseTypeFingersSpread), @(TLMPoseTypeDoubleTap) ];
-            WTPosePattern *wtPattern = [WTPosePattern posePatternFromPoseList:pattern withName:@"Cool gesture"];
-            WTPosePattern *wtPattern1 = [WTPosePattern posePatternFromPoseList:pattern1 withName:@"Cool gesture1"];
-            [self.wtmyo addPosePattern:wtPattern];
-            [self.wtmyo addPosePattern:wtPattern];
-            [self.wtmyo addPosePattern:wtPattern1];
-            [self.wtmyo removePosePatternByName:@"Cool gesture1"];
-            
+            [self configurateMyo];
         }];
     });
-   }
+
+}
+
+- (void)configurateMyo
+{
+    self.wtmyo = [[WTMyo alloc] initWithDelegate:self];
+    [self.wtmyo setLockingPolicy:TLMLockingPolicyNone];
+    NSArray *pattern =  @[@(TLMPoseTypeDoubleTap), @(TLMPoseTypeFingersSpread)];
+    NSArray *pattern1 =  @[@(TLMPoseTypeFingersSpread), @(TLMPoseTypeDoubleTap) ];
+    WTPosePattern *wtPattern = [WTPosePattern posePatternFromPoseList:pattern withName:@"Cool gesture"];
+    WTPosePattern *wtPattern1 = [WTPosePattern posePatternFromPoseList:pattern1 withName:@"Cool gesture1"];
+    [self.wtmyo addPosePattern:wtPattern];
+    [self.wtmyo addPosePattern:wtPattern];
+    [self.wtmyo addPosePattern:wtPattern1];
+    [self.wtmyo removePosePatternByName:@"Cool gesture1"];
+}
 
 
 - (void)didReceiveOrientationEvent:(TLMOrientationEvent *)orientationEvent
@@ -71,6 +76,7 @@
 
 - (void)patternWasDetected:(WTPosePattern *)pattern
 {
+    [self.wtmyo stopTrackPosePatterns];
     NSLog(@"Pattern name %@, pattern items %@", pattern.name, [pattern detectedPoses]);
 }
 @end

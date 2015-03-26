@@ -22,6 +22,18 @@
     objc_setAssociatedObject(self, @selector(posePatterns), aPosePatterns, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+
+- (NSNumber *)posePatternsTrack
+{
+    return  objc_getAssociatedObject(self, @selector(posePatternsTrack));
+}
+
+- (void)setPosePatternsTrack:(NSNumber *)aPosePatternsTrack
+{
+    objc_setAssociatedObject(self, @selector(posePatternsTrack), aPosePatternsTrack, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+
 - (BOOL)addPosePattern:(WTPosePattern *)pattern
 {
     if (!self.posePatterns.count) {
@@ -66,6 +78,23 @@
         }
     }
     return YES;
+}
+
+
+- (void)startTrackPosePatterns
+{
+    self.posePatternsTrack = @(YES);
+}
+
+
+- (void)stopTrackPosePatterns
+{
+    self.posePatternsTrack = @(NO);
+}
+
+- (BOOL)isPosePatternsTrackNow
+{
+    return self.posePatternsTrack.boolValue;
 }
 
 @end

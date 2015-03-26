@@ -14,4 +14,8 @@
 - (BOOL)addPosePattern:(WTPosePattern *)pattern;
 - (void)removePosePatternByName:(NSString *)poseName;
 
+- (void)startTrackPosePatterns;
+- (void)stopTrackPosePatterns;
+- (BOOL)isPosePatternsTrackNow;
+
 @end

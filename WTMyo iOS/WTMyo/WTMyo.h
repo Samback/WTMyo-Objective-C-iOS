@@ -36,5 +36,5 @@
 - (void)setLockingPolicy:(TLMLockingPolicy)policy;
 
 
-@property (nonatomic, readonly, strong) NSMutableArray *poseHistory; //limited
+@property (nonatomic, readonly, strong) NSMutableArray *poseHistory; //limited 10 items
 @end

@@ -35,7 +35,6 @@ NSInteger const kLIMIT_NUMBER_OF_GESTURES = 10;
     objc_setAssociatedObject(self, @selector(poseHistory), aPoseHistory, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-
 - (void)addMyoObservers
 {
     // Data notifications are received through NSNotificationCenter.
@@ -167,7 +166,9 @@ NSInteger const kLIMIT_NUMBER_OF_GESTURES = 10;
     // Retrieve the pose from the NSNotification's userInfo with the kTLMKeyPose key.
     if ([self.delegate respondsToSelector:@selector(didReceivePoseChange:)]) {
         TLMPose *pose = notification.userInfo[kTLMKeyPose];
-        [self updatePoseHistoryWithPose:pose];
+        if ([self isPosePatternsTrackNow]) {
+            [self updatePoseHistoryWithPose:pose];
+        }
         [self.delegate didReceivePoseChange:pose];
     }
 }
@@ -211,6 +212,7 @@ NSInteger const kLIMIT_NUMBER_OF_GESTURES = 10;
     if (!self.posePatterns.count) {
         return nil;
     }
+    NSLog(@"String of history %@", self.stringOfHistory);
     for (WTPosePattern *pattern in self.posePatterns) {
         if ([self.stringOfHistory containsString:pattern.patternString]) {
             NSRange range = [self.stringOfHistory rangeOfString:pattern.patternString];

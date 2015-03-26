@@ -20,6 +20,7 @@
     if (self = [super init]) {
         [self addMyoObservers];
         self.delegate = aDelegate;
+        [self startTrackPosePatterns];
     }
     return self;
 }
