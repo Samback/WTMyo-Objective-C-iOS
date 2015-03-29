@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class WTMyoBridge;
 @interface NSArray (WTMPose)
 - (NSString *)stringFromPoses;
 @end

@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Max Tymchiy. All rights reserved.
 //
 
-
 #import "WTMyo+Patterns.h"
 #import "WTPosePattern.h"
 #import <objc/runtime.h>

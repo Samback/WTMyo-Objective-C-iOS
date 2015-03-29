@@ -8,9 +8,12 @@
 
 #import "ViewController.h"
 #import "WTMyo/WTMyoBridge.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ViewController ()<WTMyoDelegate>
 @property (nonatomic, strong) WTMyo *wtmyo;
+@property (nonatomic ,strong) UIImageView *imageView;
+@property (nonatomic) NSInteger number;
 @end
 
 @implementation ViewController
@@ -61,7 +64,7 @@
 
 - (void)didReceiveAccelerometerEvent:(TLMAccelerometerEvent *)accelerometerEvent
 {
-    
+
 }
 
 - (void)didReceiveGyroscopeEvent:(TLMGyroscopeEvent *)gyroscopeEvent
@@ -73,8 +76,10 @@
 {
     if (pose.type == TLMPoseTypeFist) {
         [self.wtmyo startRecordDraw];
+       
+
     }
-    if (pose.type == TLMPoseTypeFingersSpread) {
+    if (pose.type == TLMPoseTypeDoubleTap) {
         [self drawPath:self.wtmyo.bezierPath];
     }
 }
@@ -83,27 +88,32 @@
 
 - (void)patternWasDetected:(WTPosePattern *)pattern
 {
-    [self.wtmyo stopTrackPosePatterns];
+   // [self.wtmyo stopTrackPosePatterns];
     NSLog(@"Pattern name %@, pattern items %@", pattern.name, [pattern detectedPoses]);
 }
 
 
 - (void)drawPath:(UIBezierPath *)path
 {
-    [path strokeWithBlendMode:kCGBlendModeNormal alpha:1.0];
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGPathRef cgPath = path.CGPath;
-//    
-//    // Determine the drawing mode to use. Default to
-//    // detecting hits on the stroked portion of the path.
-//    
-//    // Save the graphics state so that the path can be
-//    // removed later.
-//    CGContextSaveGState(context);
-//    CGContextAddPath(context, cgPath);
-//    
-//    // Do the hit detection.
-//    
-//    CGContextRestoreGState(context);
+    if (self.imageView) {
+        [self.imageView removeFromSuperview];
+    }
+    UIImageView *customView = [[UIImageView alloc] init];
+    customView.frame=CGRectMake(50, 50, 450, 450);
+    
+    // create a new contex to draw
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(450, 450), NO, 0);
+    [path stroke];
+    
+    customView.image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    self.imageView = customView;
+    [self.view addSubview:self.imageView];
+    
+    
+    
 }
+
 @end
+

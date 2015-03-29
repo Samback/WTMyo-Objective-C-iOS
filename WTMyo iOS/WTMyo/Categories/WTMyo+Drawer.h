@@ -10,10 +10,11 @@
 #import "WTMyoBridge.h"
 
 @interface WTMyo (Drawer)
-@property (nonatomic, readonly, strong) NSMutableArray *drawPoints;
 
-- (void)startRecordDraw;
-- (void)finishRecordDraw;
-- (BOOL)isDrawingNow;
+
 - (UIBezierPath *)bezierPath;
+
+
 @end
+
+

@@ -56,6 +56,17 @@ NSInteger const kLIMIT_NUMBER_OF_GESTURES = 10;
     objc_setAssociatedObject(self, @selector(drawRecord), aDrawRecord, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+- (NSValue *)oldPositionPoint
+{
+    return  objc_getAssociatedObject(self, @selector(oldPositionPoint));
+}
+
+- (void)setOldPositionPoint:(NSValue *)anOldPositionPoint
+{
+    objc_setAssociatedObject(self, @selector(oldPositionPoint), anOldPositionPoint, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+
 - (void)startRecordDraw
 {
     self.drawPoints = @[].mutableCopy;
@@ -116,13 +127,13 @@ NSInteger const kLIMIT_NUMBER_OF_GESTURES = 10;
                                              selector:@selector(didReceiveAccelerometerEvent:)
                                                  name:TLMMyoDidReceiveAccelerometerEventNotification
                                                object:nil];
-//    Posted when a new gyroscope event is available from a TLMMyo. Notifications are posted at a rate of 50 Hz.
+    //    Posted when a new gyroscope event is available from a TLMMyo. Notifications are posted at a rate of 50 Hz.
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didReceiveGyroscopeEvent:)
                                                  name:TLMMyoDidReceiveGyroscopeEventNotification
                                                object:nil];
     
-//     Posted when a new pose is available from a TLMMyo.
+    //     Posted when a new pose is available from a TLMMyo.
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didReceivePoseChange:)
                                                  name:TLMMyoDidReceivePoseChangedNotification
@@ -180,6 +191,12 @@ NSInteger const kLIMIT_NUMBER_OF_GESTURES = 10;
     // Retrieve the orientation from the NSNotification's userInfo with the kTLMKeyOrientationEvent key.
     if ([self.delegate respondsToSelector:@selector(didReceiveOrientationEvent:)]) {
         TLMOrientationEvent *orientationEvent = notification.userInfo[kTLMKeyOrientationEvent];
+        if ([self isDrawingNow]) {
+            TLMEulerAngles *angle = [TLMEulerAngles anglesWithQuaternion:orientationEvent.quaternion];
+            CGFloat xCoordinate =  200 - angle.yaw.radians/M_PI*100;
+            CGFloat yCoordinate =  100 + angle.pitch.radians/M_PI*100;
+            [self.drawPoints addObject:[NSValue valueWithCGPoint:CGPointMake(xCoordinate, yCoordinate)]];
+        }
         [self.delegate didReceiveOrientationEvent:orientationEvent];
     }
 }
@@ -188,9 +205,6 @@ NSInteger const kLIMIT_NUMBER_OF_GESTURES = 10;
     // Retrieve the accelerometer event from the NSNotification's userInfo with the kTLMKeyAccelerometerEvent.
     if ([self.delegate respondsToSelector:@selector(didReceiveAccelerometerEvent:)]) {
         TLMAccelerometerEvent *accelerometerEvent = notification.userInfo[kTLMKeyAccelerometerEvent];
-        if ([self isDrawingNow]) {
-            [self.drawPoints addObject:[NSValue valueWithCGPoint:CGPointMake(accelerometerEvent.vector.x *100, accelerometerEvent.vector.y *100)]];
-        }
         [self.delegate didReceiveAccelerometerEvent:accelerometerEvent];
     }
 }
@@ -225,7 +239,7 @@ NSInteger const kLIMIT_NUMBER_OF_GESTURES = 10;
         self.poseHistory = @[].mutableCopy;
     }
     if (!self.stringOfHistory.length) {
-         self.stringOfHistory = @"";
+        self.stringOfHistory = @"";
     }
     
     [self addToPoseHistoryNewPose:pose];
@@ -236,7 +250,7 @@ NSInteger const kLIMIT_NUMBER_OF_GESTURES = 10;
     if (self.poseHistory.count > kLIMIT_NUMBER_OF_GESTURES) {
         [self.poseHistory removeObjectAtIndex:0];
         if (self.stringOfHistory.length > kLIMIT_NUMBER_OF_GESTURES) {
-           self.stringOfHistory = [self.stringOfHistory substringFromIndex:1];
+            self.stringOfHistory = [self.stringOfHistory substringFromIndex:1];
         }
         
     }
@@ -265,5 +279,5 @@ NSInteger const kLIMIT_NUMBER_OF_GESTURES = 10;
     }
     return nil;
 }
-
 @end
+

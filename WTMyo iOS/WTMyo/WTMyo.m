@@ -6,8 +6,9 @@
 //  Copyright (c) 2015 Max Tymchiy. All rights reserved.
 //
 
-#import "WTMyo.h"
+
 #import "WTMyoBridge.h"
+#import "WTMyo.h"
 
 @interface WTMyo ()
 @end

@@ -11,5 +11,11 @@
 #import "WTMyoBridge.h"
 
 @interface WTMyo (ObserversAndDelegates)
+@property (nonatomic, readonly, strong) NSMutableArray *drawPoints;
+
 - (void)addMyoObservers;
+
+- (void)startRecordDraw;
+- (void)finishRecordDraw;
+- (BOOL)isDrawingNow;
 @end

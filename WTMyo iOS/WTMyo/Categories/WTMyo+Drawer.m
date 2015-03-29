@@ -7,6 +7,7 @@
 //
 
 #import "WTMyo+Drawer.h"
+#import "WTMyoBridge.h"
 
 @implementation WTMyo (Drawer)
 
@@ -22,7 +23,8 @@
     for (NSValue *value in self.drawPoints) {
         [aPath addLineToPoint:[value CGPointValue]];
     }
-    [aPath closePath];
+    //[aPath closePath];
     return aPath;
 }
+
 @end

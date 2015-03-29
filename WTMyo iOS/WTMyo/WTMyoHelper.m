@@ -13,6 +13,6 @@
 + (NSString *)strinfFromPoseType:(TLMPoseType)poseType
 {
     char c = 'a';
-    return [NSString stringWithFormat:@"%c", (c + poseType)];
+    return [NSString stringWithFormat:@"%c", (int)(c + poseType)];
 }
 @end
