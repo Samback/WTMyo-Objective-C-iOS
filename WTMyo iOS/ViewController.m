@@ -9,11 +9,13 @@
 #import "ViewController.h"
 #import "WTMyo/WTMyoBridge.h"
 #import <QuartzCore/QuartzCore.h>
+#import <CMUnistrokeGestureRecognizer/CMUnistrokeGestureRecognizer.h>
 
 @interface ViewController ()<WTMyoDelegate>
 @property (nonatomic, strong) WTMyo *wtmyo;
 @property (nonatomic ,strong) UIImageView *imageView;
 @property (nonatomic) NSInteger number;
+@property (weak, nonatomic) IBOutlet UILabel *recognizedTemplateLabel;
 @end
 
 @implementation ViewController
@@ -76,11 +78,17 @@
 {
     if (pose.type == TLMPoseTypeFist) {
         [self.wtmyo startRecordDraw];
-       
-
     }
+    
     if (pose.type == TLMPoseTypeDoubleTap) {
         [self drawPath:self.wtmyo.bezierPath];
+        CMUnistrokeGestureResult *result = [self.wtmyo.unistrokeGestureRecognizer isUnistrokeRecognizedFromBezierPath:self.wtmyo.bezierPath];
+        if (result) {
+            self.recognizedTemplateLabel.text = [NSString stringWithFormat:@"Name %@, score %f", result.recognizedStrokeName, result.recognizedStrokeScore];
+        } else {
+            self.recognizedTemplateLabel.text = @"Not recognized";
+        }
+        NSLog(@"Name %@, score %f", result.recognizedStrokeName, result.recognizedStrokeScore);
     }
 }
 
@@ -109,10 +117,7 @@
     
     UIGraphicsEndImageContext();
     self.imageView = customView;
-    [self.view addSubview:self.imageView];
-    
-    
-    
+    [self.view addSubview:self.imageView];    
 }
 
 @end

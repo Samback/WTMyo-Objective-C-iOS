@@ -199,6 +199,22 @@ CMURCGPathApplierFunc(void *info, const CGPathElement *element);
     return isRecognized;
 }
 
+
+- (CMUnistrokeGestureResult *)isUnistrokeRecognizedFromBezierPath:(UIBezierPath *)aPath
+{
+    CMURPathRef path = [self pathFromBezierPath:aPath];
+    CMURResultRef result = unistrokeRecognizePathFromTemplates(path, _unistrokeTemplates, _options);
+    CMURPathDelete(path);
+    if (result && result->score >= self.minimumScoreThreshold) {
+        return [[CMUnistrokeGestureResult alloc] initWithName:[NSString stringWithCString:result->name encoding:NSUTF8StringEncoding] score:result->score];;
+        CMUGRLog(@"Recognized: result->score = %f result->name = '%s'", result->score, result->name);
+    }
+    
+    CMURResultDelete(result);
+    return nil;
+
+}
+
 - (CMURPathRef)pathFromBezierPath:(UIBezierPath *)bezierPath
 {
     CMURPathRef path = CMURPathNew();

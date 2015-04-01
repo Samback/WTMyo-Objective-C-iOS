@@ -194,7 +194,7 @@ NSInteger const kLIMIT_NUMBER_OF_GESTURES = 10;
         if ([self isDrawingNow]) {
             TLMEulerAngles *angle = [TLMEulerAngles anglesWithQuaternion:orientationEvent.quaternion];
             CGFloat xCoordinate =  200 - angle.yaw.radians/M_PI*100;
-            CGFloat yCoordinate =  100 + angle.pitch.radians/M_PI*100;
+            CGFloat yCoordinate =  100 - angle.pitch.radians/M_PI*100;
             [self.drawPoints addObject:[NSValue valueWithCGPoint:CGPointMake(xCoordinate, yCoordinate)]];
         }
         [self.delegate didReceiveOrientationEvent:orientationEvent];

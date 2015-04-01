@@ -11,6 +11,7 @@
 
 @class WTMyoBridge;
 @class WTPosePattern;
+@class CMUnistrokeGestureRecognizer;
 
 @protocol WTMyoDelegate <NSObject>
 
@@ -35,7 +36,7 @@
 - (instancetype)initWithDelegate:(id<WTMyoDelegate>)aDelegate;
 
 - (void)setLockingPolicy:(TLMLockingPolicy)policy;
-
+@property (strong, nonatomic, readonly) CMUnistrokeGestureRecognizer *unistrokeGestureRecognizer;
 
 
 @property (nonatomic, readonly, strong) NSMutableArray *poseHistory; //limited 10 items

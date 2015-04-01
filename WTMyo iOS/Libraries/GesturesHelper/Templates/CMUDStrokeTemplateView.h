@@ -1,8 +1,8 @@
 //
-//  CMUnistrokeRecognizerTypesTests.h
-//  CMUnistrokeGestureRecognizer
+//  CMUDStrokeTemplateView.h
+//  CMUnistrokeDemo
 //
-//  Created by Chris Miles on 13/10/12.
+//  Created by Chris Miles on 19/10/12.
 //  Copyright (c) 2012 Chris Miles. All rights reserved.
 //
 //  MIT Licensed (http://opensource.org/licenses/mit-license.php):
@@ -26,8 +26,14 @@
 //  THE SOFTWARE.
 //
 
-#import <XCTest/XCTest.h>
+#import <UIKit/UIKit.h>
 
-@interface CMUnistrokeRecognizerTypesTests : XCTestCase
+@interface CMUDStrokeTemplateView : UIView
+
+@property (strong, nonatomic) UIBezierPath *bezierPath;
+@property (assign, nonatomic, getter = isHighlighted) BOOL highlighted;
+@property (copy, nonatomic) NSString *name;
+
+- (id)initWithName:(NSString *)name bezierPath:(UIBezierPath *)bezierPath;
 
 @end

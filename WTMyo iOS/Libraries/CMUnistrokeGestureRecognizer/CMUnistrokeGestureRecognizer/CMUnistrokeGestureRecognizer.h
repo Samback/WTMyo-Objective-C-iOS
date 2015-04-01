@@ -62,6 +62,8 @@
 @property (nonatomic, strong, readonly) CMUnistrokeGestureResult *result;
 @property (nonatomic, strong, readonly) UIBezierPath *strokePath;
 
+- (CMUnistrokeGestureResult *)isUnistrokeRecognizedFromBezierPath:(UIBezierPath *)path;
+
 - (void)registerUnistrokeWithName:(NSString *)name bezierPath:(UIBezierPath *)path;
 - (void)registerUnistrokeWithName:(NSString *)name bezierPath:(UIBezierPath *)bezierPath bidirectional:(BOOL)bidirectional;
 - (void)clearAllUnistrokes;

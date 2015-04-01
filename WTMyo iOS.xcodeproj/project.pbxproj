@@ -13,51 +13,58 @@
 		34408AC61AC0902D00C2D8C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34408AC41AC0902D00C2D8C6 /* Main.storyboard */; };
 		34408AC81AC0902D00C2D8C6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34408AC71AC0902D00C2D8C6 /* Images.xcassets */; };
 		34408ACB1AC0902D00C2D8C6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34408AC91AC0902D00C2D8C6 /* LaunchScreen.xib */; };
-		34408AD71AC0902D00C2D8C6 /* WTMyo_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34408AD61AC0902D00C2D8C6 /* WTMyo_iOSTests.m */; };
 		34408AE61AC0913C00C2D8C6 /* WTMyo.m in Sources */ = {isa = PBXBuildFile; fileRef = 34408AE51AC0913C00C2D8C6 /* WTMyo.m */; };
-		34408AE71AC0913C00C2D8C6 /* WTMyo.m in Sources */ = {isa = PBXBuildFile; fileRef = 34408AE51AC0913C00C2D8C6 /* WTMyo.m */; };
+		345CC3F91ACAED05005FE4A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345CC3F81ACAED05005FE4A4 /* Foundation.framework */; };
+		345CC3FB1ACAED0F005FE4A4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345CC3FA1ACAED0F005FE4A4 /* UIKit.framework */; };
+		345CC3FD1ACAEEC4005FE4A4 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345CC3FC1ACAEEC4005FE4A4 /* GLKit.framework */; };
+		345CC3FF1ACAEECB005FE4A4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345CC3FE1ACAEECB005FE4A4 /* CoreGraphics.framework */; };
+		345CC40A1ACAF401005FE4A4 /* libCMUnistrokeGestureRecognizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 345CC4071ACAF3E7005FE4A4 /* libCMUnistrokeGestureRecognizer.a */; };
+		345CC40E1ACBD0FF005FE4A4 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3435D3281ACA789500748033 /* MyoKit.framework */; };
+		345CC40F1ACBD0FF005FE4A4 /* MyoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3435D3281ACA789500748033 /* MyoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		34A1C66A1AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6691AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.m */; };
-		34A1C66B1AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6691AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.m */; };
 		34A1C6731AC1CCEF00C6BF55 /* WTPosePattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6721AC1CCEF00C6BF55 /* WTPosePattern.m */; };
-		34A1C6741AC1CCEF00C6BF55 /* WTPosePattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6721AC1CCEF00C6BF55 /* WTPosePattern.m */; };
 		34A1C6771AC1CDDB00C6BF55 /* NSArray+WTMPose.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6761AC1CDDB00C6BF55 /* NSArray+WTMPose.m */; };
-		34A1C6781AC1CDDB00C6BF55 /* NSArray+WTMPose.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6761AC1CDDB00C6BF55 /* NSArray+WTMPose.m */; };
 		34A1C6831AC1D1FC00C6BF55 /* WTMyo+Patterns.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6821AC1D1FC00C6BF55 /* WTMyo+Patterns.m */; };
-		34A1C6841AC1D1FC00C6BF55 /* WTMyo+Patterns.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6821AC1D1FC00C6BF55 /* WTMyo+Patterns.m */; };
 		34A1C6871AC2A02B00C6BF55 /* WTMyoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6861AC2A02B00C6BF55 /* WTMyoHelper.m */; };
-		34A1C6881AC2A02B00C6BF55 /* WTMyoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C6861AC2A02B00C6BF55 /* WTMyoHelper.m */; };
 		34CABBA61AC7CC7000A88135 /* WTMyo+Drawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CABBA41AC7CC7000A88135 /* WTMyo+Drawer.m */; };
-		34CABBA71AC7CC7000A88135 /* WTMyo+Drawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CABBA41AC7CC7000A88135 /* WTMyo+Drawer.m */; };
-		34CABBAE1ACA58C200A88135 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34CABBA11AC7C98900A88135 /* MyoKit.framework */; };
-		34CABBAF1ACA591A00A88135 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34CABBA11AC7C98900A88135 /* MyoKit.framework */; };
 		34CABBEF1ACA5CDA00A88135 /* CMUDTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CABBED1ACA5CDA00A88135 /* CMUDTemplate.m */; };
+		34CABBF71ACA64BF00A88135 /* CMUDStrokeTemplateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CABBF61ACA64BF00A88135 /* CMUDStrokeTemplateView.m */; };
+		34CABBFE1ACA66B300A88135 /* CMUDDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CABBFD1ACA66B300A88135 /* CMUDDrawView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		34408AD11AC0902D00C2D8C6 /* PBXContainerItemProxy */ = {
+		345CC4061ACAF3E7005FE4A4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 34408AAF1AC0902D00C2D8C6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 34408AB61AC0902D00C2D8C6;
-			remoteInfo = "WTMyo iOS";
-		};
-		34CABBE01ACA5B2000A88135 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 34CABBDB1ACA5B2000A88135 /* CMUnistrokeGestureRecognizer.xcodeproj */;
+			containerPortal = 345CC4011ACAF3E6005FE4A4 /* CMUnistrokeGestureRecognizer.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 837E286D160EE03600017FFB;
 			remoteInfo = CMUnistrokeGestureRecognizer;
 		};
-		34CABBE21ACA5B2000A88135 /* PBXContainerItemProxy */ = {
+		345CC4081ACAF3E7005FE4A4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 34CABBDB1ACA5B2000A88135 /* CMUnistrokeGestureRecognizer.xcodeproj */;
+			containerPortal = 345CC4011ACAF3E6005FE4A4 /* CMUnistrokeGestureRecognizer.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 837E287E160EE03600017FFB;
 			remoteInfo = CMUnistrokeGestureRecognizerTests;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		345CC4101ACBD0FF005FE4A4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				345CC40F1ACBD0FF005FE4A4 /* MyoKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3435D3281ACA789500748033 /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MyoKit.framework; path = WTMyo/MyoKit.framework; sourceTree = "<group>"; };
 		34408AB71AC0902D00C2D8C6 /* WTMyo iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WTMyo iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34408ABB1AC0902D00C2D8C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34408ABC1AC0902D00C2D8C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -68,11 +75,15 @@
 		34408AC51AC0902D00C2D8C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		34408AC71AC0902D00C2D8C6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		34408ACA1AC0902D00C2D8C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		34408AD01AC0902D00C2D8C6 /* WTMyo iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WTMyo iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34408AD51AC0902D00C2D8C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34408AD61AC0902D00C2D8C6 /* WTMyo_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTMyo_iOSTests.m; sourceTree = "<group>"; };
 		34408AE41AC0913C00C2D8C6 /* WTMyo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTMyo.h; path = WTMyo/WTMyo.h; sourceTree = "<group>"; };
 		34408AE51AC0913C00C2D8C6 /* WTMyo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTMyo.m; path = WTMyo/WTMyo.m; sourceTree = "<group>"; };
+		345CC3F81ACAED05005FE4A4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		345CC3FA1ACAED0F005FE4A4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		345CC3FC1ACAEEC4005FE4A4 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		345CC3FE1ACAEECB005FE4A4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		345CC4011ACAF3E6005FE4A4 /* CMUnistrokeGestureRecognizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CMUnistrokeGestureRecognizer.xcodeproj; path = "WTMyo iOS/Libraries/CMUnistrokeGestureRecognizer/CMUnistrokeGestureRecognizer.xcodeproj"; sourceTree = "<group>"; };
 		34A1C6671AC0AD4700C6BF55 /* WTMyoBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTMyoBridge.h; path = WTMyo/WTMyoBridge.h; sourceTree = "<group>"; };
 		34A1C6681AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WTMyo+ObserversAndDelegates.h"; path = "WTMyo/Categories/WTMyo+ObserversAndDelegates.h"; sourceTree = "<group>"; };
 		34A1C6691AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "WTMyo+ObserversAndDelegates.m"; path = "WTMyo/Categories/WTMyo+ObserversAndDelegates.m"; sourceTree = "<group>"; };
@@ -84,13 +95,15 @@
 		34A1C6821AC1D1FC00C6BF55 /* WTMyo+Patterns.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "WTMyo+Patterns.m"; path = "WTMyo/Categories/WTMyo+Patterns.m"; sourceTree = "<group>"; };
 		34A1C6851AC2A02B00C6BF55 /* WTMyoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTMyoHelper.h; path = WTMyo/WTMyoHelper.h; sourceTree = "<group>"; };
 		34A1C6861AC2A02B00C6BF55 /* WTMyoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTMyoHelper.m; path = WTMyo/WTMyoHelper.m; sourceTree = "<group>"; };
-		34CABBA11AC7C98900A88135 /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MyoKit.framework; path = WTMyo/MyoKit.framework; sourceTree = "<group>"; };
 		34CABBA41AC7CC7000A88135 /* WTMyo+Drawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "WTMyo+Drawer.m"; path = "WTMyo/Categories/WTMyo+Drawer.m"; sourceTree = "<group>"; };
 		34CABBA51AC7CC7000A88135 /* WTMyo+Drawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WTMyo+Drawer.h"; path = "WTMyo/Categories/WTMyo+Drawer.h"; sourceTree = "<group>"; };
-		34CABBDB1ACA5B2000A88135 /* CMUnistrokeGestureRecognizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CMUnistrokeGestureRecognizer.xcodeproj; path = "WTMyo iOS/Libraries/CMUnistrokeGestureRecognizer/CMUnistrokeGestureRecognizer.xcodeproj"; sourceTree = "<group>"; };
 		34CABBEC1ACA5CDA00A88135 /* CMUDTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDTemplate.h; sourceTree = "<group>"; };
 		34CABBED1ACA5CDA00A88135 /* CMUDTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDTemplate.m; sourceTree = "<group>"; };
 		34CABBEE1ACA5CDA00A88135 /* CMUDTemplatePaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDTemplatePaths.h; sourceTree = "<group>"; };
+		34CABBF51ACA64BF00A88135 /* CMUDStrokeTemplateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDStrokeTemplateView.h; sourceTree = "<group>"; };
+		34CABBF61ACA64BF00A88135 /* CMUDStrokeTemplateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDStrokeTemplateView.m; sourceTree = "<group>"; };
+		34CABBFC1ACA66B300A88135 /* CMUDDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUDDrawView.h; sourceTree = "<group>"; };
+		34CABBFD1ACA66B300A88135 /* CMUDDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUDDrawView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,15 +111,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34CABBAE1ACA58C200A88135 /* MyoKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		34408ACD1AC0902D00C2D8C6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				34CABBAF1ACA591A00A88135 /* MyoKit.framework in Frameworks */,
+				345CC40A1ACAF401005FE4A4 /* libCMUnistrokeGestureRecognizer.a in Frameworks */,
+				345CC3FF1ACAEECB005FE4A4 /* CoreGraphics.framework in Frameworks */,
+				345CC3FD1ACAEEC4005FE4A4 /* GLKit.framework in Frameworks */,
+				345CC40E1ACBD0FF005FE4A4 /* MyoKit.framework in Frameworks */,
+				345CC3FB1ACAED0F005FE4A4 /* UIKit.framework in Frameworks */,
+				345CC3F91ACAED05005FE4A4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,10 +126,10 @@
 		34408AAE1AC0902D00C2D8C6 = {
 			isa = PBXGroup;
 			children = (
+				345CC4011ACAF3E6005FE4A4 /* CMUnistrokeGestureRecognizer.xcodeproj */,
 				34408AB91AC0902D00C2D8C6 /* WTMyo iOS */,
 				34408AD31AC0902D00C2D8C6 /* WTMyo iOSTests */,
 				34408AB81AC0902D00C2D8C6 /* Products */,
-				34CABBDB1ACA5B2000A88135 /* CMUnistrokeGestureRecognizer.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				34408AB71AC0902D00C2D8C6 /* WTMyo iOS.app */,
-				34408AD01AC0902D00C2D8C6 /* WTMyo iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,7 +160,7 @@
 		34408ABA1AC0902D00C2D8C6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				34CABBA11AC7C98900A88135 /* MyoKit.framework */,
+				3435D3281ACA789500748033 /* MyoKit.framework */,
 				34408ABB1AC0902D00C2D8C6 /* Info.plist */,
 				34408ABC1AC0902D00C2D8C6 /* main.m */,
 			);
@@ -170,6 +179,10 @@
 		34408AD41AC0902D00C2D8C6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				345CC3FE1ACAEECB005FE4A4 /* CoreGraphics.framework */,
+				345CC3FC1ACAEEC4005FE4A4 /* GLKit.framework */,
+				345CC3FA1ACAED0F005FE4A4 /* UIKit.framework */,
+				345CC3F81ACAED05005FE4A4 /* Foundation.framework */,
 				34408AD51AC0902D00C2D8C6 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -188,6 +201,15 @@
 				34A1C6721AC1CCEF00C6BF55 /* WTPosePattern.m */,
 			);
 			name = WTMyo;
+			sourceTree = "<group>";
+		};
+		345CC4021ACAF3E6005FE4A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				345CC4071ACAF3E7005FE4A4 /* libCMUnistrokeGestureRecognizer.a */,
+				345CC4091ACAF3E7005FE4A4 /* CMUnistrokeGestureRecognizerTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		34A1C66C1AC0AD9F00C6BF55 /* Categories */ = {
@@ -214,18 +236,10 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
-		34CABBDC1ACA5B2000A88135 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				34CABBE11ACA5B2000A88135 /* libCMUnistrokeGestureRecognizer.a */,
-				34CABBE31ACA5B2000A88135 /* CMUnistrokeGestureRecognizerTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		34CABBEA1ACA5CDA00A88135 /* GesturesHelper */ = {
 			isa = PBXGroup;
 			children = (
+				34CABBF11ACA633900A88135 /* GestureView */,
 				34CABBEB1ACA5CDA00A88135 /* Templates */,
 			);
 			name = GesturesHelper;
@@ -235,11 +249,22 @@
 		34CABBEB1ACA5CDA00A88135 /* Templates */ = {
 			isa = PBXGroup;
 			children = (
+				34CABBF51ACA64BF00A88135 /* CMUDStrokeTemplateView.h */,
+				34CABBF61ACA64BF00A88135 /* CMUDStrokeTemplateView.m */,
 				34CABBEC1ACA5CDA00A88135 /* CMUDTemplate.h */,
 				34CABBED1ACA5CDA00A88135 /* CMUDTemplate.m */,
 				34CABBEE1ACA5CDA00A88135 /* CMUDTemplatePaths.h */,
 			);
 			path = Templates;
+			sourceTree = "<group>";
+		};
+		34CABBF11ACA633900A88135 /* GestureView */ = {
+			isa = PBXGroup;
+			children = (
+				34CABBFC1ACA66B300A88135 /* CMUDDrawView.h */,
+				34CABBFD1ACA66B300A88135 /* CMUDDrawView.m */,
+			);
+			path = GestureView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +277,7 @@
 				34408AB31AC0902D00C2D8C6 /* Sources */,
 				34408AB41AC0902D00C2D8C6 /* Frameworks */,
 				34408AB51AC0902D00C2D8C6 /* Resources */,
+				345CC4101ACBD0FF005FE4A4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -261,24 +287,6 @@
 			productName = "WTMyo iOS";
 			productReference = 34408AB71AC0902D00C2D8C6 /* WTMyo iOS.app */;
 			productType = "com.apple.product-type.application";
-		};
-		34408ACF1AC0902D00C2D8C6 /* WTMyo iOSTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 34408ADD1AC0902D00C2D8C6 /* Build configuration list for PBXNativeTarget "WTMyo iOSTests" */;
-			buildPhases = (
-				34408ACC1AC0902D00C2D8C6 /* Sources */,
-				34408ACD1AC0902D00C2D8C6 /* Frameworks */,
-				34408ACE1AC0902D00C2D8C6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				34408AD21AC0902D00C2D8C6 /* PBXTargetDependency */,
-			);
-			name = "WTMyo iOSTests";
-			productName = "WTMyo iOSTests";
-			productReference = 34408AD01AC0902D00C2D8C6 /* WTMyo iOSTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -291,10 +299,6 @@
 				TargetAttributes = {
 					34408AB61AC0902D00C2D8C6 = {
 						CreatedOnToolsVersion = 6.2;
-					};
-					34408ACF1AC0902D00C2D8C6 = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = 34408AB61AC0902D00C2D8C6;
 					};
 				};
 			};
@@ -311,31 +315,30 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 34CABBDC1ACA5B2000A88135 /* Products */;
-					ProjectRef = 34CABBDB1ACA5B2000A88135 /* CMUnistrokeGestureRecognizer.xcodeproj */;
+					ProductGroup = 345CC4021ACAF3E6005FE4A4 /* Products */;
+					ProjectRef = 345CC4011ACAF3E6005FE4A4 /* CMUnistrokeGestureRecognizer.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
 				34408AB61AC0902D00C2D8C6 /* WTMyo iOS */,
-				34408ACF1AC0902D00C2D8C6 /* WTMyo iOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		34CABBE11ACA5B2000A88135 /* libCMUnistrokeGestureRecognizer.a */ = {
+		345CC4071ACAF3E7005FE4A4 /* libCMUnistrokeGestureRecognizer.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libCMUnistrokeGestureRecognizer.a;
-			remoteRef = 34CABBE01ACA5B2000A88135 /* PBXContainerItemProxy */;
+			remoteRef = 345CC4061ACAF3E7005FE4A4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		34CABBE31ACA5B2000A88135 /* CMUnistrokeGestureRecognizerTests.xctest */ = {
+		345CC4091ACAF3E7005FE4A4 /* CMUnistrokeGestureRecognizerTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = CMUnistrokeGestureRecognizerTests.xctest;
-			remoteRef = 34CABBE21ACA5B2000A88135 /* PBXContainerItemProxy */;
+			remoteRef = 345CC4081ACAF3E7005FE4A4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -351,13 +354,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		34408ACE1AC0902D00C2D8C6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -366,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34408AC31AC0902D00C2D8C6 /* ViewController.m in Sources */,
+				34CABBFE1ACA66B300A88135 /* CMUDDrawView.m in Sources */,
 				34408AC01AC0902D00C2D8C6 /* AppDelegate.m in Sources */,
 				34A1C6831AC1D1FC00C6BF55 /* WTMyo+Patterns.m in Sources */,
 				34CABBA61AC7CC7000A88135 /* WTMyo+Drawer.m in Sources */,
@@ -373,36 +370,14 @@
 				34408AE61AC0913C00C2D8C6 /* WTMyo.m in Sources */,
 				34A1C6771AC1CDDB00C6BF55 /* NSArray+WTMPose.m in Sources */,
 				34408ABD1AC0902D00C2D8C6 /* main.m in Sources */,
+				34CABBF71ACA64BF00A88135 /* CMUDStrokeTemplateView.m in Sources */,
 				34A1C6731AC1CCEF00C6BF55 /* WTPosePattern.m in Sources */,
 				34CABBEF1ACA5CDA00A88135 /* CMUDTemplate.m in Sources */,
 				34A1C66A1AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		34408ACC1AC0902D00C2D8C6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				34A1C6841AC1D1FC00C6BF55 /* WTMyo+Patterns.m in Sources */,
-				34CABBA71AC7CC7000A88135 /* WTMyo+Drawer.m in Sources */,
-				34408AE71AC0913C00C2D8C6 /* WTMyo.m in Sources */,
-				34A1C6781AC1CDDB00C6BF55 /* NSArray+WTMPose.m in Sources */,
-				34408AD71AC0902D00C2D8C6 /* WTMyo_iOSTests.m in Sources */,
-				34A1C6741AC1CCEF00C6BF55 /* WTPosePattern.m in Sources */,
-				34A1C6881AC2A02B00C6BF55 /* WTMyoHelper.m in Sources */,
-				34A1C66B1AC0AD9A00C6BF55 /* WTMyo+ObserversAndDelegates.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		34408AD21AC0902D00C2D8C6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 34408AB61AC0902D00C2D8C6 /* WTMyo iOS */;
-			targetProxy = 34408AD11AC0902D00C2D8C6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		34408AC41AC0902D00C2D8C6 /* Main.storyboard */ = {
@@ -534,42 +509,6 @@
 			};
 			name = Release;
 		};
-		34408ADE1AC0902D00C2D8C6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/WTMyo",
-					iOS/WTMyo,
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "WTMyo iOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WTMyo iOS.app/WTMyo iOS";
-			};
-			name = Debug;
-		};
-		34408ADF1AC0902D00C2D8C6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/WTMyo",
-					iOS/WTMyo,
-				);
-				INFOPLIST_FILE = "WTMyo iOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WTMyo iOS.app/WTMyo iOS";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -587,15 +526,6 @@
 			buildConfigurations = (
 				34408ADB1AC0902D00C2D8C6 /* Debug */,
 				34408ADC1AC0902D00C2D8C6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		34408ADD1AC0902D00C2D8C6 /* Build configuration list for PBXNativeTarget "WTMyo iOSTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				34408ADE1AC0902D00C2D8C6 /* Debug */,
-				34408ADF1AC0902D00C2D8C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
